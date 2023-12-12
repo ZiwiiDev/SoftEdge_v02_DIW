@@ -1,0 +1,816 @@
+/*-------------------------------------------------------------------------------*/
+/* Importo una fuente de internet desde Google Fonts para títulos */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+/* Defino la fuente Open Sans de forma local desde mi equipo */
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.google.com/specimen/Open+Sans?query=Open+Sans");
+  src: local("OpenSans-SemiBold"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+}
+/*-------------------------------------------------------------------------------*/
+/* Defino variables para colores, fuentes y otros estilos globales */
+:root {
+  --font-primary: "Open Sans", sans-serif; /* Creo variable para la fuente principal */
+  --font-secondary: "Merriweather", serif; /* Creo variable para la fuente secundaria */
+  --color-enlace: #0080ff; /* Color de enlaces */
+  --color-nav: #1f1f1f; /* Color de fondo de la barra de navegación */
+  --color-texto-blanco: white; /* Color blanco para texto */
+  --color-negro: rgb(0, 0, 0); /* Color del borde */
+  --color-submenu: #444;  /* Color del submenu */
+  --color-botones-background: #0080ff; /* Color para el fondo de los botones */
+  --color-footer: rgb(104, 104, 104); /* Color para el footer */
+  --color-titulos: rgb(0, 17, 255);  /* Color para títulos */
+  --color-blanco-clarito: ghostwhite; /* Color blanco clarito para fondo de artricles */
+  --color-azul-oscuro: rgb(0, 17, 255); /* Color azul oscuro */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el BODY */
+body {
+  margin: 0; /* 0 de margen */
+  padding: 0; /* 0 de padding */
+  overflow-x: hidden; /* Para que no se pueda hacer scroll horizontal */
+  font-family: var(--font-primary);
+  background: url('../assets/fondo.jpg') center center fixed; /* Establezco la imagen para fondo */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Estilos para el HEADER */
+header {
+  display: grid; /* Defino una cuadrícula bidimensional para posicionar los elementos */
+  align-items: stretch; /* Estiro los subelementos de la cabecera para rellenar */
+  grid-template-columns: 20% 40% 20% 20%; /* Divido el header en tres columnas */
+  padding-left: 17%;
+  background-color: var(--color-negro); /* Color para el fondo de la cabecera */
+  position: relative; /* Agregado para establecer una posición relativa */
+}
+
+main {
+  display: grid;
+  align-items: stretch;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-column: 2;
+  grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  border: 2px solid var(--color-negro);
+  border-radius: 5px;
+  margin: 2%;
+  background-color: rgb(80, 80, 80);
+}
+
+main h2 {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  flex-direction: row;    /* Determino la dirección en la que se ordenarán los elementos en el espacio */
+  justify-content: center;
+  align-items: center;
+  color: var(--color-blanco-clarito);
+  font-family: var(--font-secondary);
+}
+
+/* Estilos para el NAV */
+nav {
+  display: grid; /* Defino una cuadrícula bidimensional para posicionar los elementos */
+  background-color: var(--color-nav); /* Aplico el color de fondo mediante variable */
+  font-weight: bold; /* Pongo en negrita */
+  justify-content: center; /* Alineo los apellidos a la izquierda del bloque */
+  top: 0; /* Lo posiciono en la parte superior */
+  width: 100%; /* Utilizo un ancho del 100% */
+}
+
+/* Estilos para el FOOTER */
+footer {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  flex-direction: row;    /* Determino la dirección en la que se ordenarán los elementos en el espacio */
+  position: absolute; /* Coloco el footer respecto a la página entera */
+  background-color: var(--color-footer);   /* Aplico color de texto destacado */
+  justify-content: space-between; /* Distribuyo espacios entre y alrededor de los ítems flex */
+  font-weight: bold;  /* Lo pongo en negrita */
+  width: 100%;    /* Establezco el ancho del html al 100% */
+  padding-top: 1.5%;
+  height: 23%;    /* Establezco la altura del html al 23% */
+  border: 1px solid var(--color-negro);
+  top: 350%;  /* Especifico la posición del footer */
+  bottom: 0; /* Cambiado de top a bottom para que esté pegado al fondo */
+  justify-content: center;    /* Alineo los apellidos a la izquierda del bloque */
+}
+
+/* Estilos para incluir el borde en el tamaño total  */
+header, nav, footer {
+  box-sizing: border-box;    /* Ajusto el modelo de caja para incluir el borde en el tamaño total */
+}
+
+section {
+  background-color: rgb(209, 209, 209);
+}
+
+article {
+  background-color: rgb(245, 246, 255);
+}
+/*-------------------------------------------------------------------------------*/
+/* ENCABEZADO */
+/* Estilos para el título h1 dentro del encabezado */
+header h1 {
+  color: var(--color-texto-blanco);
+  font-family: var(--font-secondary); /* Establezco la fuente para el título de la empresa mediante fuente de internet */
+  letter-spacing: 10px; /* Separación de 30px entre cada carácter */
+  justify-content: center; /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+  align-content: center; /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+  text-shadow: 5px 5px 5px #00d9ff, 10px 10px 10px #6200ff; /* Aplico sombra de dos colores diferentes */
+  grid-column: span 1; /* Hace que el h1 abarque una columna completa */
+  font-size: 30px;
+}
+
+/* Estilos para las divisiones de la cabecera */
+.logo-container,
+.name-empresa-container,
+.producto-estrella-container,
+.btnHeader-container {
+  display: grid; /* Defino una cuadrícula bidimensional para posicionar los elementos */
+  grid-column: span 1; /* Cada subzona abarca una columna completa */
+  justify-content: space-around; /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+  align-content: center; /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+}
+
+/* Estilos para el logotipo de la empresa */
+.logo-container img {
+  object-fit: contain; /* Mantengo la relación de aspecto y ajusta la imagen dentro del contenedor */
+}
+
+.producto-estrella-container {
+  margin-right: 50%;
+}
+
+/* Estilos para el nombre de la empresa */
+.name-empresa-container {
+  font-weight: bold; /* Pongo el texto en negrita */
+  margin-right: 85%;
+}
+
+/* Estilos para los botones de la cabecera */
+.btnHeader-container {
+  grid-gap: 2%; /* Especifico la distancia entre filas y columnas de la cuadrícula */
+}
+
+/* Estilos para los botones */
+#btnContacto,
+#btnInicioSesion {
+  font-family: var(--font-primary); /* Establezco una fuente */
+  font-size: 12px; /* Establezco un tamaño al texto */
+}
+
+/* Estilos para cuando se pase el ratón por encima de los botones de la cabecera */
+#btnContacto:hover,
+#btnInicioSesion:hover {
+  color: var(--color-texto-blanco); /* Establezco el color de texto a blanco */
+  background-color: var(--color-botones-background); /* Establezco el fondo de los botones a azul */
+}
+/*-------------------------------------------------------------------------------*/
+/* ZONA DE NAVEGACIÓN (MENÚ NIVEL 2) */
+/* Estilo para los elementos <ul> que son descendientes de <nav> */
+.menuNivel2 ul {
+  margin: 0;
+  padding: 15px;
+}
+
+/* Estilo para los elementos <a> que son descendientes de <nav> */
+.menuNivel2 a {
+  color: var(--color-texto-blanco); /* Establezco color de texto blanco */
+  padding: 1.7%;
+  font-family: var(--font-primary); /* Establezco fuente de texto de variable */
+  font-size: 17px; /* Establezco un tamaño al texto */
+}
+
+/* Para cuando añada los enlaces que se posicionen uno a la derecha de otro */
+.menuNivel2 li {
+  display: inline; /* Establezco el espacio del contenido y el siguiente elemento se situará a la derecha */
+}
+
+/* Estilos para los enlaces  */
+.menuNivel2 li a {
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Al pasar el ratón por encima */
+.menuNivel2 a:hover {
+  color: var(--color-enlace);
+}
+
+/* Estilo para el menú de nivel 2 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 267px;
+  background-color: var(--color-submenu);
+}
+
+/* Estilos para cuando paso el ratón por encima de la opción del menú de nivel 2 */
+.menuNivel2 li:hover > ul.submenu {
+  display: block;
+}
+
+/* Oculto el checkbox del menú de hamburguesa */
+#menuCheckbox {
+  position: absolute;
+  top: 23px;
+  right: 18px;
+  opacity: 0;
+}
+/*-------------------------------------------------------------------------------*/
+/* MIGAS DE PAN */
+/* Estilos para las migas de pan */
+.migas-de-pan {
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 17px;
+  border: 2px solid var(--color-negro);
+  color: #0080ff;
+}
+
+/* Estilos para los enlaces de las migas de pan */
+.migas-de-pan a {
+  color: #0080ff;
+  font-weight: bold;
+}
+/*-------------------------------------------------------------------------------*/
+/* SECCIONES */
+#primera-seccion {
+  border-top: 3px solid #000;
+}
+
+#primera-seccion,
+#segunda-seccion,
+#tercera-seccion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#zona1, #zona2, #zona3, #zona4, #zona5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 10%;  /* Hago el borde redondo */
+  margin: 1%;
+}
+
+#zona1,
+#zona2 {
+  width: 50%;
+}
+
+#zona3 {
+  width: 55%;
+}
+
+#zona4 {
+  width: 45%;
+}
+
+#zona5 {
+  width: 50%;
+}
+
+.skip-link {
+  color: #0080ff;
+  padding: 5px;
+  text-align: left;
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la primera subzona */
+#zona1,
+#zona2,
+#zona3,
+#zona4,
+#zona5 {
+  text-align: center; /* Centro el contenido */
+  justify-content: center; /* Centro horizontalmente el contenido */
+}
+
+h3 {
+  color: var(--color-azul-oscuro);
+  font-size: 20px;
+}
+
+#zona1 .productos-container {
+  display: flex; /* Utilizo un contenedor flexible para las tarjetas de producto */
+  justify-content: space-around; /* Distribuyo el espacio horizontalmente entre las tarjetas */
+  flex-wrap: wrap; /* Permito que las tarjetas se envuelvan en múltiples líneas si el espacio es insuficiente */
+  margin-top: 20px; /* Añado un espacio superior entre el encabezado y las tarjetas */
+}
+
+#zona1 .tarjeta {
+  border: 2px solid #000;
+  width: 200px; /* Establezco el ancho de cada tarjeta */
+  margin: 10px; /* Añado un margen entre las tarjetas */
+  padding: 10px; /* Añado un relleno dentro de cada tarjeta */
+  border-radius: 10%;
+  overflow: hidden; /* Agregado para ocultar cualquier desbordamiento */
+  background-color: var(--color-texto-blanco);
+  box-shadow: -2px 2px 2px var(--color-negro);    /* Aplico sombra */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la tarjeta */
+}
+
+/* Estilos para la imágenes de la tarjeta de la zona 1 */
+#zona1 .tarjeta img {
+  border-top-left-radius: 2%;   /* La esquina superior izquierda la redondeo */
+  border-top-right-radius: 2%;  /* La esquina superior derecha la redondeo */
+  width: 50%;   /* Establezco el ancho de la tarjeta al 100% */
+  padding-top: 5%;
+}
+
+/* Estilos para cuando paso el ratón por encima de la tarjeta */
+#zona1 .tarjeta:hover {
+  filter: brightness(95%);  /* Aplico un filtro que quita brillo */
+}
+
+/* Estilos para los comentarios de las empresas */
+#zona1 .comentarios {
+  font-style: italic; /* Estilo de fuente cursiva */
+  font-size: 15px;
+  opacity: 75%;
+  color:rgb(112, 112, 112);
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la segunda subzona */
+#zona2 {
+  padding: 2%;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  width: 100%; /* Ocupo el ancho completo del contenedor */
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
+}
+
+/* Colores personalizados para cada categoría */
+#desarrollo,
+#sistemas-seguridad,
+#softwareERP,
+#desarrolloWeb,
+#IMR,
+#seguridad-informatica,
+#consultoria-sistemas,
+#consultoria-desarrollo {
+  color: white; /* Cambio el color del texto según sea necesario */
+}
+
+#desarrollo {
+  background-color: rgb(131, 139, 255);
+}
+
+#sistemas-seguridad {
+  background-color: rgb(255, 184, 77);
+}
+
+#softwareERP,
+#desarrolloWeb,
+#consultoria-desarrollo {
+  background-color: rgb(132, 241, 255);
+}
+
+#seguridad-informatica,
+#IMR,
+#consultoria-sistemas {
+  background-color: rgb(255, 229, 191);
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+caption {
+  padding: 2%;
+  color: var(--color-azul-oscuro);
+  font-size: 20px;
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la tercera subzona */
+#zona3 h3 {
+  margin-left: 5%;
+}
+
+#zona3 .contenido h4 {
+  font-weight: bold; /* Pongo en negrita */
+  color:var(--color-azul-oscuro);
+  font-size: 20px;
+}
+
+/* Estilos para las imágenes de los artículos */
+#zona3 img {
+  width: 50%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+/* Estilos para los artículos */
+.articulo {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #000;
+  border-radius: 10%;
+  overflow: hidden; /* Agregado para ocultar cualquier desbordamiento */
+  background-color: var(--color-texto-blanco);
+  box-shadow: -2px 2px 2px var(--color-negro);    /* Aplico sombra */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la tarjeta */
+}
+
+/* Estilos para el contenido de los artículos */
+.articulo .contenido {
+  margin-top: 10px;
+}
+
+/* Estilos para el enlace "Leer más" */
+.articulo .enlace-articulo {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-azul-oscuro);
+}
+
+span {
+  color:var(--color-enlace);
+}
+
+/* Estilo de las Etiquetas */
+.etiquetas {
+  display: flex;
+  margin-top: 2%;
+  margin-left: 10%;
+  color: var(--color-enlace);
+}
+
+.etiqueta {
+  padding: 2%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto Hover */
+.etiqueta:hover {
+  background-color: #f0f0f0;
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la cuarta subzona */
+#zona4 h3 {
+  margin-left: 5%;
+}
+
+h4 {
+  font-size: 14px;
+  color:rgb(131, 139, 255);
+}
+
+/* Estilos para los empleados */
+.empleado {
+  margin: 2%;
+  padding: 0.5%;
+  border: 2px solid #000;
+  border-radius: 10%;
+  overflow: hidden; /* Agregado para ocultar cualquier desbordamiento */
+  background-color: var(--color-texto-blanco);
+  box-shadow: -2px 2px 2px var(--color-negro);    /* Aplico sombra */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la tarjeta */
+}
+
+.empleado img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.empleado h3 {
+  margin-top: 10px;
+}
+
+.empleado p {
+  margin: 8px 0;
+}
+
+.empleado ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.empleado li {
+  margin-bottom: 5px;
+}
+
+/* Estilos para cuando paso el ratón por encima de la tarjeta */
+#zona4 .empleado:hover {
+  filter: brightness(95%);  /* Aplico un filtro que quita brillo */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la quinta subzona */
+#zona5 {
+  max-width: 700px; /* Ajusta este valor según sea necesario */
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+#citaForm {
+  text-align: left; /* Alinea el texto a la izquierda dentro del formulario */
+}
+
+#zona5 form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  border: 2px solid var(--color-negro);
+  box-shadow: -2px 2px 2px var(--color-negro);    /* Aplico sombra */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la tarjeta */
+}
+
+form h3 {
+  font-size: 25px;
+  text-align: center;
+}
+
+#zona5 label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Asegura que los radio buttons se muestren en línea */
+.turno-options {
+  display: flex;
+  gap: 10px; /* Espaciado entre los radio buttons */
+}
+
+#zona5 input,
+#zona5 select,
+#zona5 textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#zona5 select {
+  margin-bottom: 20px;
+}
+
+/* Cuando el campo es inválido se pone un borde rojo */
+#zona5 input:invalid,
+#zona5 select:invalid {
+  border: solid 2px red;
+}
+
+/* Cuando el campo es válido se pone un borde verde */
+#zona5 input:valid,
+#zona5 select:valid {
+  border: solid 2px green;
+}
+
+#zona5 .mensaje{ 
+  color: red;
+}
+
+/* Al lado de cada campo obligatorio se ha puesto una etiqueta span de clase mensaje que se oculta cuando el campo es válido */
+#zona5 input:valid + .mensaje { 
+  visibility: hidden;
+}
+
+#zona5 .error-message {
+  color: #ff7b7b;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+#zona5 button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#zona5 button:hover {
+  background-color: #408143;
+}
+/*-------------------------------------------------------------------------------*/
+/* FOOTER */
+/* Estilos para el contenedor de footer */
+.footer-container {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+}
+
+/* Estilos para los contenedores de cada zona del footer */
+.cookie-block,
+.info-block,
+.social-block {
+  flex: 1; /* Los ítems crecen y se ven del mismo tamaño */
+  margin-left: 5%;
+}
+
+/* Estilos al pasar el ratón por encima del contenedor de cookies */
+.cookie-block:hover {
+  outline: solid var(--color-enlace); /* Perfil visible */
+  border-radius: 5%;    /* Redondeo las esquinas */
+}
+
+/* Estilos para los h3 que son hijos del contenedor de footer */
+.footer-container h3 {
+  font-size: 25px; /* Tamaño de fuente diferente */
+  font-family: var(--font-primary);
+  margin: 5%;
+}
+
+/* Estilos para los h3 que son hijos del contenedor de redes sociales */
+.social-block h3 {
+  text-align: center; /* Centro el texto */
+}
+
+/* Estilos para las viñetas */
+footer ul {
+  list-style-type: square;    /* Viñetas cuadradas */
+  padding: 0;
+}
+
+/* Estilos para cada elemento de la lista */
+footer ul li {
+  cursor: pointer;    /* Cursor seleccionado */
+}
+
+/* Estilos para cuando se pasa el ratón por encima de los elementos de la lista */
+footer ul li:hover {
+  color: var(--color-enlace); /* Cambio color al pasar el ratón */
+}
+
+.menu-hamburguesa {
+  position: relative;
+}
+
+.menu-hamburguesa span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+/* Estilos para el contenedor de las redes sociales */
+.social-icons {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  justify-content: space-around;  /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+}
+
+/* Estilos para las imágenes del contenedor de redes sociales */
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color-blanco-clarito);  /* Borde de 2px de grosor sólido y color blanco */
+  border-radius: 50%; /* Imágenes con borde redondeado */
+  transition: background-color 0.3s, border-color 0.3s;   /* Retraso para cuando se hace el hover */
+}
+
+/* Estilos para cuando se pase el ratón por encima de las imágnes del contenedor de redes sociales*/
+.social-icons img:hover {
+  background-color: var(--color-blanco-clarito); /* Cambiar fondo al pasar el ratón */
+  border-color: var(--color-nav); /* Cambiar color del borde al pasar el ratón */
+  filter: hue-rotate(90deg);  /* Aplico el filtro de cambiar el tono del color de la imagen */
+}
+/*-------------------------------------------------------------------------------*/
+/* MEDIA QUERY */
+/* Media query para dispositivos con menos de 620px */
+/* Si pongo 620px y compruebo con "620px" no se aplicaría esta media query, así que le pongo "max-width: 619px" */
+@media only screen and (max-width: 619px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Estilos para la cabecera en dispositivos con menos de 620px */
+  .producto-estrella-container{
+    display: none; /* Oculto el bloque de la imagen del producto promocional */
+  }
+
+  /* Estilos para el menú de hamburguesa */
+  .menu-hamburguesa {
+    display: block; /* Mostrar en dispositivos móviles */
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-texto-blanco);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 999; /* Me aseguro que se sobreponga a los demás elementos */
+  }
+
+  /* Estilos para mostrar las 3 barras */
+  .barra {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto-blanco);
+    margin: 6px 0;
+  }
+  
+  /* Oculto el menú principal por defecto en dispositivos menores de 620px */
+  .menuNivel2 {
+    display: none;
+  }
+
+  /* Estilos para mostrar las 3 barras cuando el checkbox está seleccionado */
+  #menuCheckbox:checked + .menu-hamburguesa .barra:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  #menuCheckbox:checked + .menu-hamburguesa .barra:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menuCheckbox:checked + .menu-hamburguesa .barra:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  #menuCheckbox:checked ~ .menuNivel2 {
+    display: block;
+  }
+
+  /* Oculto la segunda zona */
+  #zona2,
+  #zona3 {
+    display: none;
+  }
+
+  main h2 {
+    justify-content: left;
+    margin-left: 30%;
+  }
+
+  #zona1 {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #zona4,
+  #zona5 {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+
+  form#citaForm {
+    width: 85%;
+  }
+
+  #zona5 {
+    margin: 2%;
+  }
+
+  #zona5 form {
+    display: flex; /* Utiliza flexbox para alinear los fieldsets al lado del otro */
+    flex-wrap: wrap; /* Permite que los fieldsets se envuelvan en una nueva línea si no hay suficiente espacio */
+  }
+
+  fieldset {
+    flex: 1; /* Hace que los fieldsets ocupen el 50% del ancho del contenedor */
+    margin-right: 10px; /* Añade espacio entre los fieldsets */
+    margin-bottom: 10px; /* Añade espacio debajo de los fieldsets */
+  }
+
+  footer {
+    top: 340%;
+  }
+}
+/*-------------------------------------------------------------------------------*/

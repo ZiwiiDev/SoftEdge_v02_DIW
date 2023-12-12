@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!-- Declaro que utilizo HTML5 -->
+<html lang="es">  <!-- Especifico en el elemento raíz "html" que utilizaré el idioma español -->
+  <head>
+    <meta charset="UTF-8">  <!-- Defino la codificación "UTF-8" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css"> <!-- Enlace a un archivo CSS externo llamado 'styles.css' -->
+    <title>Proyecto UD03 index.html · Oliver Fabian Stetcu</title>
+  </head>
+
+  <!-- ZONA DE CONTENIDO -->
+  <body>
+    <!-- CABECERA -->
+    <header>
+      <!-- Nombre de la empresa -->
+      <div class="name-empresa-container">
+        <h1>SoftEdge</h1>
+      </div>
+
+      <!-- Logo de la empresa con texto alternativo en la imagen -->
+      <div class="logo-container">
+          <img src="./assets/logo.png" title="Logotipo de la empresa" alt="Logotipo de SoftEdge" height="180" width="180">
+      </div>
+
+      <!-- Nuestro producto destacado -->
+      <div class="producto-estrella-container">
+        <img src="./assets/producto-estrella.png" title="Producto destacado" alt="Producto Estrella" height="100" width="100">
+      </div>
+
+      <!-- Botones -->
+      <div class="btnHeader-container">
+        <input type="submit" name="btnInicioSesion" value="Iniciar sesión" id="btnInicioSesion">
+        <input type="submit" name="btnContacto" value="Contacto" id="btnContacto">
+      </div>
+    </header>
+
+    <!-- MENÚ HAMBURGUESA PARA DISPOSITIVOS MENORES DE 620px -->
+    <!-- He considerado oportuno hacer que al pulsar sobre las 3 barras se muestre el menú de nivel 2 en vez de mostrar el de hamburguesa debido a que lo veo
+    poco eficiente, ocupa mucho espacio en la pantalla lo que hace que el contenido de la cabecera sea mucho más pequeño. Además no es recomendable utilizarlo porque
+    va en contra de todas las reglas de clics, ya que para acceder es necesario hacer un clic extra, esto quiere decir, un esfuerzo extra para el usuario y eso lo hace
+    menos accesible y menos usable -->
+    <input type="checkbox" id="menuCheckbox">
+    <label for="menuCheckbox" class="menu-hamburguesa">
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <div class="barra"></div>
+    </label>
+    
+    <!-- MENÚ DE NAVEGACIÓN DE NIVEL 2 -->
+    <nav class="menuNivel2">
+      <ul>
+        <li><a href="#">Desarrollo Software</a>
+          <ul class="submenu">
+              <li><a href="https://www.ujaen.es/" target="_blank">Desarrollo Web</a></li>
+              <li><a href="https://www.educacionyfp.gob.es/portada.html" target="_blank"><abbr title="Enterprise Resource Planning">ERP</abbr></a>
+              <li><a href="./nosotros.html" accesskey="w">Sobre Nosotros</a></li> <!-- Pulsando la combinación de teclas "ALT + W" se abrirá "nosotros.html" -->
+          </ul>
+        </li>
+        <li><a href="https://todofp.es/inicio.html" target="_blank">Consultoría</a></li>
+        <li><a href="https://www.incibe.es/" target="_blank"><abbr title="Implantación y administración de redes">IAR</abbr></a></li>
+        <li><a href="https://www.osi.es/es" target="_blank">Zona privada</a></li>
+      </ul>
+    </nav>
+
+    <!-- MIGAS DE PAN -->
+    <div class="migas-de-pan">
+      <p>Inicio</p>
+    </div>
+    
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <!-- Contenedor con el footer -->
+      <div class="footer-container">
+
+        <!-- Zona de cookies - Zona 1 -->
+        <div class="cookie-block">
+          <h3>Cookies</h3>
+          <label><input type="checkbox"> Cookies obligatorias</label><br>
+          <label><input type="checkbox"> Cookies de funcionalidad</label><br>
+          <label><input type="checkbox"> Cookies publicitarias</label>
+        </div>
+  
+        <!-- Zona de enlaces - Zona 2 -->
+        <div class="info-block">
+          <h3>Enlaces</h3>
+          <ul>
+            <li>Soporte</li>
+            <li>Política de Privacidad</li>
+            <li>Acerca de</li>
+          </ul>
+        </div>
+  
+        <!-- Zona de redes sociales - Zona 3 -->
+        <div class="social-block">
+          <h3>Redes Sociales</h3>
+          <div class="social-icons">
+            <img src="./assets/facebook.png" alt="Facebook">
+            <img src="./assets/linkedin.png" alt="LinkedIn">
+            <img src="./assets/instagram.png" alt="instagram">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

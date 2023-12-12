@@ -1,0 +1,468 @@
+<!DOCTYPE html> <!-- Declaro que utilizo HTML5 -->
+<html lang="es">  <!-- Especifico en el elemento raíz "html" que utilizaré el idioma español -->
+  <head>
+    <meta charset="UTF-8">  <!-- Defino la codificación "UTF-8" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/stylesNosotros.css"> <!-- Enlace a un archivo CSS externo llamado 'styles.css' -->
+    <title>Proyecto UD03 nosotros.html · Oliver Fabian Stetcu</title>
+  </head>
+  
+  <!-- ZONA DE CONTENIDO -->
+  <body>
+    <!-- CABECERA -->
+    <header>
+      <!-- Nombre de la empresa -->
+      <div class="name-empresa-container">
+        <h1 tabindex="1">SoftEdge</h1>
+      </div>
+
+      <!-- Logo de la empresa con enlace a la página inicial -->
+      <div class="logo-container">
+        <!-- Enlace para saltar al contenido principal -->
+        <a href="#main-content" class="skip-link" tabindex="1">Ir a contenido principal</a>
+
+        <a href="./index.html">
+          <img src="./assets/logo.png" title="Logotipo de la empresa" alt="Logotipo de SoftEdge" height="180" width="180" tabindex="1">
+        </a>
+      </div>
+
+      <!-- Nuestro producto destacado -->
+      <div class="producto-estrella-container">
+        <img src="./assets/producto-estrella.png" title="Producto destacado" alt="Producto Estrella" height="100" width="100" tabindex="1">
+      </div>
+
+      <!-- Botones -->
+      <div class="btnHeader-container">
+        <input type="submit" name="btnInicioSesion" value="Iniciar sesión" id="btnInicioSesion" tabindex="1">
+        <input type="submit" name="btnContacto" value="Contacto" id="btnContacto" tabindex="1">
+      </div>
+    </header>
+
+    <!-- MENÚ HAMBURGUESA PARA DISPOSITIVOS MENORES DE 620px -->
+    <!-- He considerado oportuno hacer que al pulsar sobre las 3 barras se muestre el menú de nivel 2 en vez de mostrar el de hamburguesa debido a que lo veo
+    poco eficiente, ocupa mucho espacio en la pantalla lo que hace que el contenido de la cabecera sea mucho más pequeño. Además no es recomendable utilizarlo porque
+    va en contra de todas las reglas de clics, ya que para acceder es necesario hacer un clic extra, esto quiere decir, un esfuerzo extra para el usuario y eso lo hace
+    menos accesible y menos usable -->
+    <input type="checkbox" id="menuCheckbox">
+    <label for="menuCheckbox" class="menu-hamburguesa" aria-label="Menú">
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <span aria-hidden="true">Menú</span>
+    </label>
+    
+    <!-- MENÚ DE NAVEGACIÓN DE NIVEL 2 -->
+    <nav class="menuNivel2">
+      <ul>
+        <li><a href="#" tabindex="2">Desarrollo Software</a>
+          <ul class="submenu">
+              <li><a href="https://www.ujaen.es/" target="_blank" tabindex="2">Desarrollo Web</a></li>
+              <li><a href="https://www.educacionyfp.gob.es/portada.html" target="_blank" tabindex="2"><abbr title="Enterprise Resource Planning">ERP</abbr></a>
+              <li><a>Sobre Nosotros</a></li>
+          </ul>
+        </li>
+        <li><a href="https://todofp.es/inicio.html" target="_blank" tabindex="2">Consultoría</a></li>
+        <li><a href="https://www.incibe.es/" target="_blank" tabindex="2"><abbr title="Implantación y administración de redes">IAR</abbr></a></li>
+        <li><a href="https://www.osi.es/es" target="_blank" tabindex="2">Zona privada</a></li>
+      </ul>
+    </nav>
+
+    <!-- MIGAS DE PAN -->
+    <div class="migas-de-pan">
+      <a href="./index.html" accesskey="r" title="Pulsa 'ALT + R' para volver a 'Inicio'" tabindex="2">Inicio</a>&nbsp;> Desarrollo Software > Sobre Nosotros <!-- Pulsando la combinación de teclas "ALT + R" se abrirá "index.html" (con "r" referencio a "return") -->
+    </div>
+
+    <!-- MAIN (SECTION) -->
+    <!-- Principal (sólo puede haber 1 por web) -->
+    <main id="main-content">
+      <h2>⭐ ¿Quiénes somos? ⭐</h2>
+
+      <div>
+        <!-- Enlace para saltar al final del contenido -->
+        <a href="#footer" class="skip-link" tabindex="2">Ir al final del contenido</a>
+      </div>
+
+      <!-- Primera sección -->
+      <section id="primera-seccion">
+        
+        <!-- Primera zona -->
+        <article id="zona1">
+          <h3>Productos:</h3>
+
+          <!-- Nuestros productos -->
+          <div class="productos-container">
+            <!-- Tarjeta de cada producto -->
+            <div class="tarjeta" tabindex="3">
+              <!-- Nombre, descripción e imagen del producto -->
+              <div>
+                <img src="./assets/producto-estrella.png" alt="Producto Photoshop">
+                <h3>Photoshop</h3>
+                <p>Software de edición de imágenes líder del sector.</p>
+              </div>
+
+              <!-- Lista con funcionalidades del producto -->
+              <div>
+                <ul>
+                  <li>Manipular Capas</li>
+                  <li>Filtros y Efectos</li>
+                  <li>Pincel y Texto</li>
+                </ul>
+              </div>
+
+              <!-- Comentarios del producto -->
+              <div class="comentarios">
+                <p>Puedes hacer que cualquier cosa luzca perfecta. -Beyoncé</p>
+                <p lang="en">Is the ultimate canvas of digital artistry. -Jenny Becker</p>
+              </div>
+            </div>
+
+            <div class="tarjeta" tabindex="3">
+              <!-- Nombre, descripción e imagen del producto -->
+              <div>
+                <img src="./assets/after-effects.png" alt="Producto After Effects">
+                <h3>After Effects</h3>
+                <p>Potente herramienta de posproducción para crear animaciones.</p>
+              </div>
+
+              <div>
+                <ul>
+                  <li>Edición Video</li>
+                  <li>Animación</li>
+                  <li>Efectos Visuales</li>
+                </ul>
+              </div>
+
+              <!-- Comentarios del producto -->
+              <div class="comentarios">
+                <p>Es la magia de las gráficas en movimiento. -Alicia Rivera</p>
+                <p lang="en">Is the wizardry of motion graphics. -Alex Turner</p>
+              </div>
+            </div>
+
+            <div class="tarjeta" tabindex="3">
+              <!-- Nombre, descripción e imagen del producto -->
+              <div>
+                <img src="./assets/adobe-creative-cloud.png" alt="Producto Adobe Creative Cloud">
+                <h3>Adobe Creative Cloud</h3>
+                <p>Suite integral de aplicaciones que proporciona herramientas.</p>
+              </div>
+
+              <div>
+                <ul>
+                  <li>Edición Imágenes</li>
+                  <li>Diseño Gráfico</li>
+                  <li>Edición de Video</li>
+                </ul>
+              </div>
+
+              <!-- Comentarios del producto -->
+              <div class="comentarios">
+                <p lang="en">Creative workflows, blending artistry and technology effortlessly. -Jhon Lennon</p>
+                <p>La innovación y la colaboración van de la mano. -Laura Sánchez</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Segunda zona -->
+        <article id="zona2">
+          <table tabindex="4">
+            <caption>· Tabla de Productos, Servicios y Clientes ·</caption>
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th colspan="3" id="desarrollo">Desarrollo</th>
+                  <th colspan="3" id="sistemas-seguridad">Sistemas y Seguridad</th>
+                </tr>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th id="softwareERP">Software ERP</th>
+                  <th id="desarrolloWeb">Desarrollo Web</th>
+                  <th id="consultoria-desarrollo">Consultoría</th>
+                  <th id="IMR"><abbr title="Instalación y Mantenimiento de Redes">IMR</abbr></th>
+                  <th id="seguridad-informatica">Seguridad Informática</th>
+                  <th id="consultoria-sistemas">Consultoría</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th id="clientes-nacionales">Clientes Nacionales</th>
+                  <td headers="desarrollo softwareERP clientes-nacionales">10</td>
+                  <td headers="desarrollo desarrolloWeb clientes-nacionales">27</td>
+                  <td headers="desarrollo consultoria-desarrollo clientes-nacionales">15</td>
+                  <td headers="sistemas-seguridad IMR clientes-nacionales">20</td>
+                  <td headers="sistemas-seguridad seguridad-informatica clientes-nacionales">12</td>
+                  <td headers="sistemas-seguridad consultoria-sistemas clientes-nacionales">7</td>
+                </tr>
+                <tr>
+                  <th id="clientes-internacionales">Clientes Internacionales</th>
+                  <td headers="desarrollo softwareERP clientes-internacionales">46</td>
+                  <td headers="desarrollo desarrolloWeb clientes-internacionales">54</td>
+                  <td headers="desarrollo consultoria-desarrollo clientes-internacionales">23</td>
+                  <td headers="sistemas-seguridad IMR clientes-internacionales">48</td>
+                  <td headers="sistemas-seguridad seguridad-informatica clientes-internacionales">21</td>
+                  <td headers="sistemas-seguridad consultoria-sistemas clientes-internacionales">54</td>
+               </tr>
+               <tr>
+                 <th id="totales">Totales</th>
+                 <td headers="desarrollo softwareERP totales">56</td>
+                 <td headers="desarrollo desarrolloWeb totales">84</td>
+                 <td headers="desarrollo consultoria-desarrollo totales">38</td>
+                 <td headers="sistemas-seguridad IMR totales">68</td>
+                 <td headers="sistemas-seguridad seguridad-informatica totales">33</td>
+                 <td headers="sistemas-seguridad consultoria-sistemas totales">61</td>
+               </tr>
+             </tbody>
+          </table>
+        </article>
+      </section>
+
+      <!-- Segunda sección -->
+      <section id="segunda-seccion">
+        <!-- Tercera zona -->
+        <article id="zona3">
+          <h3>Herramientas:</h3>
+
+          <!-- Primer artículo -->
+          <div class="articulo" tabindex="5">
+            <img src="./assets/wappalyzer.png" alt="Herramienta Wappalyzer">
+            <div class="contenido">
+              <h4>Wappalyzer - Technology profiler</h4>
+              <p>Extensión del navegador que permite al usuario identificar las tecnologías que utiliza una web.</p>
+              <p class="autor"><span>Autor:</span> Elbert Alias</p>
+              <p class="fecha"><span>Publicación:</span> 22 Noviembre de 2022</p>
+
+              <!-- Etiquetas o Categorías -->
+              <div class="etiquetas">
+                <div class="etiqueta" lang="en">Analytics</div>
+                <div class="etiqueta" lang="en">Hosting</div>
+                <div class="etiqueta">Extensión</div>
+              </div>
+
+              <a target="_blank" href="https://dispromedia.com/es/b/blog-dispromedia/tips/p/ebasnet-ya-es-visible-a-wappalyzer-155-12#:~:text=%C2%BFQu%C3%A9%20es%20Wappalyzer%3F,que%20se%20ha%20creado%20web." class="enlace-articulo">Leer más</a>
+            </div>
+          </div>
+
+          <!-- Segundo artículo -->
+          <div class="articulo" tabindex="5">
+            <img src="./assets/whatfont.png" alt="Herramienta WhatFont">
+            <div class="contenido">
+              <h4>WhatFont</h4>
+              <p>Herramienta que ha encontrado el secreto para obtener rápidamente el nombre de una fuente.</p>
+              <p class="autor"><span>Autor:</span> Puro Diseño</p>
+              <p class="fecha"><span>Publicación:</span> 04 Octubre de 2021</p>
+
+              <!-- Etiquetas o Categorías -->
+              <div class="etiquetas">
+                <div class="etiqueta" lang="en">Color</div>
+                <div class="etiqueta" lang="en">Family-Font</div>
+                <div class="etiqueta">Extensión</div>
+              </div>
+
+              <a target="_blank" href="https://purodiseno.lat/tendencias/que-es-what-font-is-o-como-reconocer-una-tipografia-al-instante/" class="enlace-articulo">Saber más</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cuarta zona -->
+        <article id="zona4">
+          <h3>Equipo:</h3>
+        
+          <div class="empleado" tabindex="6">
+            <img src="./assets/empleado1.png" alt="Avatar Empleado 1">
+            <h3>Juan</h3>
+            <h4>Desarrollador</h4>
+            <ul>
+              <li>Photoshop</li>
+              <li>After Effects</li>
+              <li>Creative Cloud</li>
+            </ul>
+          </div>
+
+          <div class="empleado" tabindex="6">
+            <img src="./assets/empleado2.png" alt="Avatar Empleado 2">
+            <h3>Andrés</h3>
+            <h4>Programador</h4>
+            <ul>
+              <li>Photoshop</li>
+              <li>After Effects</li>
+              <li>Creative Cloud</li>
+            </ul>
+          </div>
+            
+          <div class="empleado" tabindex="6">
+            <img src="./assets/empleado3.png" alt="Avatar Empleado 3">
+            <h3>María</h3>
+            <h4>Analista</h4>
+            <ul>
+              <li>Photoshop</li>
+              <li>After Effects</li>
+              <li>Creative Cloud</li>
+            </ul>
+          </div>
+
+          <div class="empleado" tabindex="6">
+            <img src="./assets/empleado4.png" alt="Avatar Empleado 4">
+            <h3>Luisa</h3>
+            <h4>Diseñadora</h4>
+            <ul>
+              <li>Photoshop</li>
+              <li>After Effects</li>
+              <li>Creative Cloud</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- Tercera sección -->
+      <section id="tercera-seccion">
+        <!-- Quinta zona -->
+        <article id="zona5">
+          <form id="citaForm" autocomplete="on">
+            <h3>· Formulario de Cita ·</h3>
+
+            <fieldset aria-label="Datos de la Cita">
+             <legend>Datos de la Cita</legend>
+          
+              <!-- Campos Obligatorios -->
+              <div>
+                <label title="Nombre de la empresa" for="nombreEmpresa">Nombre de la Empresa *</label>
+                <input type="text" id="nombreEmpresa" name="nombreEmpresa" minlength="3" maxlength="20" pattern="^[a-zA-Z ]+$" title="Introduzca su nombre" tabindex="7" required>
+                <!-- Mensaje que se muestra para los campos obligatorios, cuando es invalido se muestra y cuando es válido se oculta -->
+                <span class="mensaje" role="alert" title="Mensaje de error"> Inválido</span>
+              </div><br>
+          
+             <div>
+               <label title="Persona de Contacto" for="personaContacto">Persona de Contacto *</label>
+               <input type="text" id="personaContacto" name="personaContacto" minlength="3" maxlength="40" pattern="^[a-zA-Z ]+$" title="Introduzca la persona de contacto" tabindex="7" required>
+               <span class="mensaje" role="alert" title="Mensaje de error"> Inválido</span>
+              </div>
+          
+              <div>
+                <label title="Teléfono de Contacto" for="telefonoContacto">Teléfono de Contacto *</label>
+                <input type="tel" id="telefonoContacto" name="telefonoContacto" maxlength="9" pattern="^[0-9]{9}$" title="Introduzca su teléfono de contacto" tabindex="7" required>
+                <span class="mensaje" role="alert" title="Mensaje de error"> Inválido</span>
+              </div>
+          
+             <div>
+               <label title="Correo Electrónico" for="emailContacto">Correo Electrónico *</label>
+               <input type="email" id="emailContacto" name="emailContacto" placeholder="ejemplo@correo.com" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.(es|com|dev|net)$" title="Introduzca su correo electrónico" tabindex="7" required>
+               <span class="mensaje" role="alert" title="Mensaje de error"> Inválido</span>
+              </div>
+          
+              <div>
+               <label title="Desplegable de Productos" for="producto">Producto *</label>
+               <select id="producto" name="producto" accesskey="h" title="Pulsa 'ALT + H' para ir a seleccionar un producto" tabindex="7">
+                  <optgroup label="Desarrollo" title="Seleccionar de tipo Desarrollo">
+                    <option value="softwareERP" title="Seleccionar Software ERP">Software ERP</option>
+                    <option value="desarrolloWeb" title="Seleccionar Desarrollo Web" selected>Desarrollo Web</option>
+                    <option value="consultoriaDesarrollo" title="Seleccionar Consultoría">Consultoría</option>
+                  </optgroup>
+                  
+                  <optgroup label="Sistemas y Seguridad" title="Seleccionar de tipo Sistemas y Seguridad">
+                   <option value="redes" title="Seleccionar Redes">Instalación y Mantenimiento de Redes</option>
+                   <option value="seguridadInformatica" title="Seleccionar Seguridad Informática">Seguridad Informática</option>
+                    <option value="consultoriaSistemas" title="Seleccionar Consultoría">Consultoría</option>
+                 </optgroup>
+               </select>
+              </div>
+
+              <div>
+                <label title="Fecha de Cita" for="fechaCita">Fecha de Cita *</label>
+                <input type="date" id="fechaCita" name="fechaCita" title="Introduzca la fecha de cita" tabindex="7" required>
+                <span class="mensaje" role="alert" title="Mensaje de error"> Inválido</span>
+              </div>
+          
+              <div>
+                <label title="Tipo de Turno" for="turno">Turno *</label>
+                <div class="turno-options" role="radiogroup" aria-required="true">
+                  <label title="Turno de Mañana" for="manana" tabindex="7">Mañana</label>
+                  <input title="Elegir 'Mañana'" type="radio" id="manana" name="turno" value="manana" required>
+                
+                  <label title="Turno de Tarde" for="tarde" tabindex="7">Tarde</label>
+                  <input title="Elegir 'Tarde'" type="radio" id="tarde" name="turno" value="tarde">
+                  <span class="mensaje" role="alert" title="Mensaje de error"> Inválido</span>
+                </div>
+              </div>
+            </fieldset><br>
+
+            <fieldset aria-label="¿Cómo conoció nuestro producto?">
+              <legend>¿Cómo conoció nuestro producto?</legend>
+
+              <!-- Campos Opcionales -->
+              <div role="group">
+                <div>
+                  <label title="Aconsejado por terceros" for="aconsejado" tabindex="7">Aconsejado por terceros</label>
+                  <input type="checkbox" id="aconsejado" name="fuenteConocimiento[]" value="aconsejado" title="Selecciona aconsejado por terceros">
+                </div>
+                <div>
+                  <label title="Redes Sociales" for="redesSociales" tabindex="7">Redes Sociales</label>
+                  <input type="checkbox" id="redesSociales" name="fuenteConocimiento[]" value="redesSociales" title="Selecciona redes sociales">
+                </div>
+                <div>
+                  <label title="Web" for="web" tabindex="7">Web</label>
+                  <input type="checkbox" id="web" name="fuenteConocimiento[]" value="web" title="Selecciona web">
+                </div>
+                <div>
+                  <label title="Otros" for="otros" tabindex="7">Otros</label>
+                  <input type="checkbox" id="otros" name="fuenteConocimiento[]" value="otros" title="Selecciona otros">
+                </div>
+              </div>
+          
+              <div>
+                <label title="Observaciones" for="observaciones">Observaciones</label>
+                <textarea id="observaciones" name="observaciones" rows="4" title="Escribe las observaciones" tabindex="7"></textarea>
+              </div>
+            </fieldset><br>
+
+            <div>
+              <button type="submit" tabindex="7" aria-label="Enviar formulario" title="Botón enviar">Enviar</button>
+              <button type="reset" tabindex="7" aria-label="Cancelar formulario" title="Botón cancelar">Cancelar</button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="footer">
+      <!-- Contenedor con el footer -->
+      <div class="footer-container">
+
+        <!-- Zona de cookies - Zona 1 -->
+        <div class="cookie-block" tabindex="8">
+          <h3>Cookies</h3>
+          <label for="checkboxObligatorias">
+          <input id="checkboxObligatorias" name="checkboxObligatorias" type="checkbox"> Cookies obligatorias</label><br>
+
+          <label for="checkboxFuncionalidad">
+          <input id="checkboxFuncionalidad" name="checkboxFuncionalidad" type="checkbox"> Cookies de funcionalidad</label><br>
+
+          <label for="checkboxPublicitarias">
+          <input id="checkboxPublicitarias" name="checkboxPublicitarias" type="checkbox"> Cookies publicitarias</label>
+        </div>
+  
+        <!-- Zona de enlaces - Zona 2 -->
+        <div class="info-block" tabindex="8">
+          <h3>Enlaces</h3>
+          <ul>
+            <li>Soporte</li>
+            <li>Política de Privacidad</li>
+            <li>Acerca de</li>
+          </ul>
+        </div>
+  
+        <!-- Zona de redes sociales - Zona 3 -->
+        <div class="social-block" tabindex="8">
+          <h3>Redes Sociales</h3>
+          <div class="social-icons">
+            <img src="./assets/facebook.png" alt="Facebook">
+            <img src="./assets/linkedin.png" alt="LinkedIn">
+            <img src="./assets/instagram.png" alt="instagram">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+/*-------------------------------------------------------------------------------*/
+/* Importo una fuente de internet desde Google Fonts para títulos */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+/* Defino la fuente Open Sans de forma local desde mi equipo */
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.google.com/specimen/Open+Sans?query=Open+Sans");
+  src: local("OpenSans-SemiBold"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+}
+/*-------------------------------------------------------------------------------*/
+/* Defino variables para colores, fuentes y otros estilos globales */
+:root {
+  --font-primary: "Open Sans", sans-serif; /* Creo variable para la fuente principal */
+  --font-secondary: "Merriweather", serif; /* Creo variable para la fuente secundaria */
+  --color-enlace: #0080ff; /* Color de enlaces */
+  --color-nav: #1f1f1f; /* Color de fondo de la barra de navegación */
+  --color-texto-blanco: white; /* Color blanco para texto */
+  --color-negro: rgb(0, 0, 0); /* Color del borde */
+  --color-submenu: #444;
+  --color-botones-background: #0080ff; /* Color para el fondo de los botones */
+  --color-footer: rgb(104, 104, 104); /* Color para el footer */
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el BODY */
+body {
+  margin: 0; /* 0 de margen */
+  padding: 0; /* 0 de padding */
+  overflow-x: hidden; /* Para que no se pueda hacer scroll horizontal */
+  font-family: var(--font-primary);
+  background: url('../assets/fondo.jpg') center center fixed; /* Establezco la imagen para fondo */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Estilos para el HEADER */
+header {
+  display: grid; /* Defino una cuadrícula bidimensional para posicionar los elementos */
+  align-items: stretch; /* Estiro los subelementos de la cabecera para rellenar */
+  grid-template-columns: 20% 40% 20% 20%; /* Divido el header en tres columnas */
+  padding-left: 17%;
+  background-color: var(--color-negro); /* Color para el fondo de la cabecera */
+  position: relative; /* Agregado para establecer una posición relativa */
+}
+
+/* Estilos para el NAV */
+nav {
+  display: grid; /* Defino una cuadrícula bidimensional para posicionar los elementos */
+  background-color: var(--color-nav); /* Aplico el color de fondo mediante variable */
+  font-weight: bold; /* Pongo en negrita */
+  justify-content: center; /* Alineo los apellidos a la izquierda del bloque */
+  top: 0; /* Lo posiciono en la parte superior */
+  width: 100%; /* Utilizo un ancho del 100% */
+}
+
+/* Estilos para el FOOTER */
+footer {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  flex-direction: row;    /* Determino la dirección en la que se ordenarán los elementos en el espacio */
+  position: absolute; /* Coloco el footer respecto a la página entera */
+  background-color: var(--color-footer);   /* Aplico color de texto destacado */
+  justify-content: space-between; /* Distribuyo espacios entre y alrededor de los ítems flex */
+  font-weight: bold;  /* Lo pongo en negrita */
+  width: 100%;    /* Establezco el ancho del html al 100% */
+  padding-top: 1.5%;
+  height: 23%;    /* Establezco la altura del html al 23% */
+  border: 1px solid var(--color-negro);
+  top: 77%;  /* Especifico la posición del footer */
+  bottom: 0; /* Cambiado de top a bottom para que esté pegado al fondo */
+  justify-content: space-around;    /* Alineo los apellidos a la izquierda del bloque */
+}
+
+/* Estilos para incluir el borde en el tamaño total  */
+header, nav, footer {
+  box-sizing: border-box;    /* Ajusto el modelo de caja para incluir el borde en el tamaño total */
+}
+/*-------------------------------------------------------------------------------*/
+/* ENCABEZADO */
+/* Estilos para el título h1 dentro del encabezado */
+header h1 {
+  color: var(--color-texto-blanco);
+  font-family: var(--font-secondary); /* Establezco la fuente para el título de la empresa mediante fuente de internet */
+  letter-spacing: 10px; /* Separación de 30px entre cada carácter */
+  justify-content: center; /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+  align-content: center; /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+  text-shadow: 5px 5px 5px #00d9ff, 10px 10px 10px #6200ff; /* Aplico sombra de dos colores diferentes */
+  grid-column: span 1; /* Hace que el h1 abarque una columna completa */
+  font-size: 30px;
+}
+
+/* Estilos para las divisiones de la cabecera */
+.logo-container,
+.name-empresa-container,
+.producto-estrella-container,
+.btnHeader-container {
+  display: grid; /* Defino una cuadrícula bidimensional para posicionar los elementos */
+  grid-column: span 1; /* Cada subzona abarca una columna completa */
+  justify-content: space-around; /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+  align-content: center; /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+}
+
+/* Estilos para el logotipo de la empresa */
+.logo-container img {
+  object-fit: contain; /* Mantengo la relación de aspecto y ajusta la imagen dentro del contenedor */
+}
+
+.producto-estrella-container {
+  margin-right: 50%;
+}
+
+/* Estilos para el nombre de la empresa */
+.name-empresa-container {
+  font-weight: bold; /* Pongo el texto en negrita */
+  margin-right: 85%;
+}
+
+/* Estilos para los botones de la cabecera */
+.btnHeader-container {
+  grid-gap: 2%; /* Especifico la distancia entre filas y columnas de la cuadrícula */
+}
+
+/* Estilos para los botones */
+#btnContacto,
+#btnInicioSesion {
+  font-family: var(--font-primary); /* Establezco una fuente */
+  font-size: 12px; /* Establezco un tamaño al texto */
+}
+
+/* Estilos para cuando se pase el ratón por encima de los botones de la cabecera */
+#btnContacto:hover,
+#btnInicioSesion:hover {
+  color: var(--color-texto-blanco); /* Establezco el color de texto a blanco */
+  background-color: var(--color-botones-background); /* Establezco el fondo de los botones a azul */
+}
+/*-------------------------------------------------------------------------------*/
+/* ZONA DE NAVEGACIÓN (MENÚ NIVEL 2) */
+/* Estilo para los elementos <ul> que son descendientes de <nav> */
+.menuNivel2 ul {
+  margin: 0;
+  padding: 15px;
+}
+
+/* Estilo para los elementos <a> que son descendientes de <nav> */
+.menuNivel2 a {
+  color: var(--color-texto-blanco); /* Establezco color de texto blanco */
+  padding: 1.7%;
+  font-family: var(--font-primary); /* Establezco fuente de texto de variable */
+  font-size: 17px; /* Establezco un tamaño al texto */
+}
+
+/* Para cuando añada los enlaces que se posicionen uno a la derecha de otro */
+.menuNivel2 li {
+  display: inline; /* Establezco el espacio del contenido y el siguiente elemento se situará a la derecha */
+}
+
+/* Estilos para los enlaces  */
+.menuNivel2 li a {
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Al pasar el ratón por encima */
+.menuNivel2 a:hover {
+  color: var(--color-enlace);
+}
+
+/* Estilo para el menú de nivel 2 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 232px;
+  background-color: var(--color-submenu);
+}
+
+/* Estilos para cuando paso el ratón por encima de la opción del menú de nivel 2 */
+.menuNivel2 li:hover > ul.submenu {
+  display: block;
+}
+
+/* Oculto el checkbox del menú de hamburguesa */
+#menuCheckbox {
+  position: absolute;
+  top: 23px;
+  right: 18px;
+  opacity: 0;
+}
+/*-------------------------------------------------------------------------------*/
+/* MIGAS DE PAN */
+/* Estilos para las migas de pan */
+.migas-de-pan {
+  padding-left: 10px;
+  background-color: #f0f0f0;
+  font-size: 17px;
+  border: 2px solid var(--color-negro);
+  color: #0080ff;
+}
+/* Estilos para los enlaces de las migas de pan */
+.migas-de-pan a {
+  text-decoration: none;
+  color: #0080ff;
+  font-weight: bold;
+}
+/*-------------------------------------------------------------------------------*/
+/* FOOTER */
+/* Estilos para el contenedor de footer */
+.footer-container {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  justify-content: center;    /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+}
+
+/* Estilos para los contenedores de cada zona del footer */
+.cookie-block,
+.info-block,
+.social-block {
+  flex: 1; /* Los ítems crecen y se ven del mismo tamaño */
+  margin-left: 5%;
+}
+
+.cookie-block {
+  margin-bottom: 2%;
+  margin-right: 15%;
+}
+
+.info-block {
+  margin-left: 2%;
+}
+
+/* Estilos al pasar el ratón por encima del contenedor de cookies */
+.cookie-block:hover {
+  outline: solid var(--color-enlace); /* Perfil visible */
+  border-radius: 5%;    /* Redondeo las esquinas */
+}
+
+/* Estilos para los h3 que son hijos del contenedor de footer */
+.footer-container h3 {
+  font-size: 25px; /* Tamaño de fuente diferente */
+  font-family: var(--font-primary);
+  margin: 5%;
+}
+
+/* Estilos para los h3 que son hijos del contenedor de redes sociales */
+.social-block h3 {
+  text-align: center; /* Centro el texto */
+}
+
+/* Estilos para las viñetas */
+footer ul {
+  list-style-type: square;    /* Viñetas cuadradas */
+  padding: 0;
+}
+
+/* Estilos para cada elemento de la lista */
+footer ul li {
+  cursor: pointer;    /* Cursor seleccionado */
+}
+
+/* Estilos para cuando se pasa el ratón por encima de los elementos de la lista */
+footer ul li:hover {
+  color: var(--color-enlace); /* Cambio color al pasar el ratón */
+}
+
+/* Estilos para el contenedor de las redes sociales */
+.social-icons {
+  display: flex;  /* Propiedad que ayuda a colocar celdas como tabla, con coportamiento predecible y adaptable */
+  justify-content: space-around;  /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+}
+
+/* Estilos para las imágenes del contenedor de redes sociales */
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color-blanco-clarito);  /* Borde de 2px de grosor sólido y color blanco */
+  border-radius: 50%; /* Imágenes con borde redondeado */
+  transition: background-color 0.3s, border-color 0.3s;   /* Retraso para cuando se hace el hover */
+}
+
+/* Estilos para cuando se pase el ratón por encima de las imágnes del contenedor de redes sociales*/
+.social-icons img:hover {
+  background-color: var(--color-blanco-clarito); /* Cambiar fondo al pasar el ratón */
+  border-color: var(--color-nav); /* Cambiar color del borde al pasar el ratón */
+  filter: hue-rotate(90deg);  /* Aplico el filtro de cambiar el tono del color de la imagen */
+}
+/*-------------------------------------------------------------------------------*/
+/* MEDIA QUERY */
+/* Media query para dispositivos con menos de 620px */
+/* Si pongo 620px y compruebo con "620px" no se aplicaría esta media query, así que le pongo "max-width: 619px" */
+@media only screen and (max-width: 619px) {
+  /* Estilos para la cabecera en dispositivos con menos de 620px */
+  .producto-estrella-container{
+    display: none; /* Oculto el bloque de la imagen del producto promocional */
+  }
+
+  /* Estilos para el menú de hamburguesa */
+  .menu-hamburguesa {
+    display: block; /* Mostrar en dispositivos móviles */
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-texto-blanco);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 999; /* Me aseguro que se sobreponga a los demás elementos */
+  }
+
+  /* Estilos para mostrar las 3 barras */
+  .barra {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto-blanco);
+    margin: 6px 0;
+  }
+  
+  /* Oculto el menú principal por defecto en dispositivos menores de 620px */
+  .menuNivel2 {
+    display: none;
+  }
+
+  /* Estilos para mostrar las 3 barras cuando el checkbox está seleccionado */
+  #menuCheckbox:checked + .menu-hamburguesa .barra:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  #menuCheckbox:checked + .menu-hamburguesa .barra:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menuCheckbox:checked + .menu-hamburguesa .barra:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  #menuCheckbox:checked ~ .menuNivel2 {
+    display: block;
+  }
+}
+/*-------------------------------------------------------------------------------*/
