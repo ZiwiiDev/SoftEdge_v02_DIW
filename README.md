@@ -1,2 +1,2 @@
-# SoftEdge_DIW
-## Proyecto de Accesibilidad y Usabilidad de DIW
+# SoftEdge
+## Proyecto Versión 2.0 de DIW
